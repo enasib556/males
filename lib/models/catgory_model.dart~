@@ -1,6 +1,0 @@
-class Catgory {
-  final String id;
-  final String title;
-  final String imageUrl;
-  Catgory({});
-}
