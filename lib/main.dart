@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:males/Pages/homePage.dart';
+import 'package:males/pages/home_page.dart';
 
 void main()
 {
@@ -12,7 +12,7 @@ class MalesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homepage()
+      home: HomePage()
     );
   }
 }

@@ -1,34 +1,30 @@
 import 'package:flutter/material.dart';
-import 'package:males/Pages/mealsPage.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:males/pages/meals_page.dart';
 
-import '../Models/catgoryMalesModel.dart';
+import '../models/catgory_model.dart';
 
 class CatgoryContainer extends StatelessWidget {
-  final CatgoryMalesModel catgory;
-  const CatgoryContainer({super.key,required this.catgory});
+  final Catgory catgory;
+  const CatgoryContainer({super.key, required this.catgory});
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.only(top:15),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 25),
       child: InkWell(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=> Mealspage(catgory: catgory,)));
-        },
+        onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => MealsPage(catgory: catgory)));},
         child: Container(
-          width:MediaQuery.sizeOf(context).width,
+          width: double.infinity,
           height: 150,
           decoration: BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.circular(24),
-              image: DecorationImage(image: AssetImage(catgory.catgoryImage),
-                fit: BoxFit.fill, opacity:0.7,
-              )
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(14),
+            image:  DecorationImage(image: AssetImage(catgory.imageUrl)
+                ,fit:BoxFit.fill,opacity: 0.6
+            ),
           ),
-          child:  Padding(
-            padding: const EdgeInsets.only(top: 110),
-            child: Text(catgory.catgoryName,textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color:Colors.white),),
-          ),
+          child: Center(child: Text(catgory.title,style: GoogleFonts.alkatra(color: Colors.white,fontWeight:FontWeight.bold,fontSize: 30 ),)),
         ),
       ),
     );
